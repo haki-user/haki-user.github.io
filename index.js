@@ -2,7 +2,7 @@ var x;
 var wordsCt = 0;
 let count = 60;
 var inc = 0;
-var str = "Aditya Pratap Singh Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae natus dolorem";
+var str = "The first thing that pops into my mind when I look at this paper is my consideration of the kind of audience I had. I was assuming they were very or somewhat knowledgeable about the topic I chose. I realize this is not true now. This is the process that goes on in my mind when I first meet people. I think, for the audience I had, the main idea needed to be more concrete. As I went on in this class the kind of topics I chose got more & more concrete & audience consideration grew stronger in forming my papers.";
 var res = str.split("");
 const textInput = document.querySelector("#inpt");
 function myfunction(){
@@ -14,13 +14,14 @@ function myfunction(){
 
     //changing span color
     let SpanId = document.querySelector("#a"+wordsCt);
-    if(x[x.length-1] === res[wordsCt]){
+    if(count <= 1) return;
+    else if(x[x.length-1] === res[wordsCt]){
         SpanId.style.background = "linear-gradient(to right, #BDE7BD 100%,#eeecec 0%)"
         SpanId.style.color ="green"
     } else {
         inc++;
         SpanId.style.background = "linear-gradient(to right, #fab400 100%, #eeecec 0%)"
-        // SpanId.style.color ="red"
+        // SpanId.style.color ="resd"
     }
     wordsCt++;
     console.log(wordsCt, inc, x, res[wordsCt-1], str.length)
@@ -39,5 +40,5 @@ function timel(){
     document.querySelector("#acc").innerHTML="Accuracy: "+((wordsCt-inc)*100/wordsCt)+"%";
 
     if(count===0 || wordsCt===str.length) clearInterval(inter);
-
+    console.log(inter, count);
 }
